@@ -1,0 +1,28 @@
+<div class="flex flex-row">
+  <ul class="flex flex-col">
+    <li *ngFor="let user of filterBy('all')" class="border-2 w-64 h-36 p-4">
+      <article class="overflow-hidden">
+        <h3 class="text-red-900">
+          <span class="font-bold">Nombre:</span> {{ user.name }}
+        </h3>
+        <span> Email: {{ user.email }} </span>
+        <span> Role: {{ user.role }} </span>
+      </article>
+    </li>
+  </ul>
+
+  <ul class="flex gap-5">
+    <button
+      class="bg-red-400 py-8 px-16 rounded-md text-black w-8 h-8 inline-flex items-center justify-center"
+      (click)="filterByV2('customer')"
+    >
+      {{ roles[0].name }}
+    </button>
+    <button
+      class="bg-red-400 py-8 px-16 rounded-md text-black w-8 h-8 inline-flex items-center justify-center"
+      (click)="filterByV2('admin')"
+    >
+      {{ roles[1].name }}
+    </button>
+  </ul>
+</div>
